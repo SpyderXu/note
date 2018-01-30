@@ -19,7 +19,31 @@ git checkout -- file:丢弃工作区的修改
 实际为利用缓存区或者版本库中的文件替换现有文件，因此在删除文件时也使用
 git remove
 git commit 删除版本库中的文件
-
 git reset HEAD filename:把暂存区的修改退回到工作区
+git remote add origin git@github.com:yourname/your.git
+git push -u origin master 把本地库推送到远程
+git push origin master
+
+
+
+分支管理：
+分支创建与合并：
+创建分支： git checkout -b dev创建分支dev并切换到dev上
+= git branch dev + git checkout dev
+git branch查看当前分支
+将dev分支合并到master git merge dev
+git branch -d dev 删除分支dev
+
+同时修改master与dev分支后在merge会产生冲突
+git log --graph --pretty=oneline --abbrev-commit
+git merge --no-ff -m "commit" dev
+
+git的stash功能，把当前的工作现场存储起来，等以后恢复现场后继续工作
+git stash之后创建分支修复bug（回到master分支上创建临时分支）
+
+git stash pop：恢复并删除
+先用git stash list查看
+git stash apply:恢复
+git stash drop :删除
 
 
