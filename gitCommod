@@ -1,0 +1,25 @@
+git init:初始化git仓库
+git add:添加文件到缓存取
+git commit -m "":将缓存区的文件提交
+git status：查看当前状态
+新修改的文件，还未被提交（git add）可利用git diff 查看未提交的文件与git仓库中的文件的不同。
+git log：查看提交记录
+git log --pretty=oneline 只显示一行
+版本回退：
+git reset --hard 
+HEAD：当前版本
+HEAD^:上一个版本 以此类推
+或者利用git reset --hard commit ID
+当窗口被关闭时，利用git reflog 查看之前的所有的记录
+第一次修改-》git add -》第二次修改-》git commit:只提交了第一次的修改
+git checkout -- file:丢弃工作区的修改
+（1）文件修改后未被放到缓存区，撤销和版本库中的一样
+（2）文件已被添加到了缓存区，则撤回到与缓存区相同的状态
+简而言之，撤回到与最后一次git add , git commit 相同的状态
+实际为利用缓存区或者版本库中的文件替换现有文件，因此在删除文件时也使用
+git remove
+git commit 删除版本库中的文件
+
+git reset HEAD filename:把暂存区的修改退回到工作区
+
+
